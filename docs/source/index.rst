@@ -22,7 +22,8 @@ Visit `our website <http://f1tenth.org/>`_ for more information.
 
    intro
    build
-   flow_setup
+   learn
+..   flow_setup
    flow_examples
    tutorials
    multiagent

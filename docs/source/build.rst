@@ -1,7 +1,7 @@
 ..    include:: <isonum.txt>
 .. contents:: Build Manual
 
-What you need to start
+Build
 ==================
 
 
@@ -56,12 +56,12 @@ Tools
 (1) T3 Torx screwdriver`.
 
 Bill of Materials
-==================
+------------------------
 
 Insert BOM here.
 
 Preparing and Assembling the Car
-==================
+------------------------
 
 Preparing the Car
 ----------------------------
