@@ -21,6 +21,7 @@ Visit `our website <http://f1tenth.org/>`_ for more information.
    :caption: Contents:
 
    intro
+   build
    flow_setup
    flow_examples
    tutorials
