@@ -38,14 +38,7 @@ Visit `our website <http://f1tenth.org/>`_ for more information.
 
 If you use Flow for academic research, you are highly encouraged to cite our paper:
 
-@misc{okelly2019f110,
-    title={F1/10: An Open-Source Autonomous Cyber-Physical Platform},
-    author={Matthew O'Kelly and Varundev Sukhil and Houssam Abbas and Jack Harkins and Chris Kao and Yash Vardhan Pant and Rahul Mangharam and Dipshil Agarwal and Madhur Behl and Paolo Burgio and Marko Bertogna},
-    year={2019},
-    eprint={1901.08567},
-    archivePrefix={arXiv},
-    primaryClass={cs.RO}
-}
+O'Kelly, Matthew, Varundev Sukhil, Houssam Abbas, Jack Harkins, Chris Kao, Yash Vardhan Pant, Rahul Mangharam et al. "F1/10: An Open-Source Autonomous Cyber-Physical Platform." arXiv preprint arXiv:1901.08567 (2019).
 
 Indices and tables
 ==================
