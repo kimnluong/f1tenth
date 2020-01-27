@@ -6,12 +6,15 @@
 Welcome to Flow
 ================
 
-`Flow <https://flow-project.github.io>`_ is a computational framework for deep RL and control experiments for traffic microsimulation. Visit `our website <https://flow-project.github.io>`_ for more information.
 
-Flow is a work in progress - input is welcome. Available documentation is limited for now.
-`Tutorials <https://github.com/flow-project/flow/tree/master/tutorials>`_ are available in iPython notebook format.
 
-*If you are looking for Akvo Flow, their documentation can be found at* http://flowsupport.akvo.org.
+`F1tenth <http://f1tenth.org/>`_ is
+one tenth the size. ten times the fun.
+Simple. Fast. Open Source.
+Join the future of autonomous racing.
+Visit `our website <http://f1tenth.org/>`_ for more information.
+
+
 
 .. toctree::
    :maxdepth: 1
@@ -34,15 +37,14 @@ Flow is a work in progress - input is welcome. Available documentation is limite
 
 If you use Flow for academic research, you are highly encouraged to cite our paper:
 
-C. Wu, A. Kreidieh, K. Parvate, E. Vinitsky, A. Bayen, "Flow: Architecture and
-Benchmarking for Reinforcement Learning in Traffic Control," CoRR,
-vol. abs/1710.05465, 2017. [Online]. Available: https://arxiv.org/abs/1710.05465
-
-If you use the benchmarks, you are highly encouraged to cite our paper:
-
-Vinitsky, E., Kreidieh, A., Le Flem, L., Kheterpal, N., Jang, K., Wu, F., ... &
-Bayen, A. M. (2018, October). Benchmarks for reinforcement learning in
-mixed-autonomy traffic. In Conference on Robot Learning (pp. 399-409).
+@misc{okelly2019f110,
+    title={F1/10: An Open-Source Autonomous Cyber-Physical Platform},
+    author={Matthew O'Kelly and Varundev Sukhil and Houssam Abbas and Jack Harkins and Chris Kao and Yash Vardhan Pant and Rahul Mangharam and Dipshil Agarwal and Madhur Behl and Paolo Burgio and Marko Bertogna},
+    year={2019},
+    eprint={1901.08567},
+    archivePrefix={arXiv},
+    primaryClass={cs.RO}
+}
 
 Indices and tables
 ==================
