@@ -44,7 +44,7 @@ sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 
 project = 'F1tenth'
 copyright = '2019, f1tenth'
-author = 'f1temtj'
+author = 'f1tenth'
 
 # The short X.Y version
 version = ''
@@ -67,7 +67,7 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
-    'numpydoc',
+    # 'numpydoc',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -204,8 +204,8 @@ epub_exclude_files = ['search.html']
 
 # -- Extension configuration -------------------------------------------------
 
-numpydoc_use_plotsv = True
-numpydoc_show_class_members = False
-numpydoc_show_inherited_class_members = True
-numpydoc_class_members_toctree = True
-numpydoc_use_blockquotes = Trueautodoc_mock_imports = ["django"]
+# numpydoc_use_plotsv = True
+# numpydoc_show_class_members = False
+# numpydoc_show_inherited_class_members = True
+# numpydoc_class_members_toctree = True
+# numpydoc_use_blockquotes = Trueautodoc_mock_imports = ["django"]
