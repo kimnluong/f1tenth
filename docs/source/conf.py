@@ -42,9 +42,9 @@ sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 
 # -- Project information -----------------------------------------------------
 
-project = 'Flow'
-copyright = '2019, flow-project'
-author = 'flow-project'
+project = 'F1tenth'
+copyright = '2019, f1tenth'
+author = 'f1temtj'
 
 # The short X.Y version
 version = ''
@@ -130,7 +130,7 @@ html_theme = 'sphinx_rtd_theme'
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Flowdoc'
+htmlhelp_basename = 'f1tenthdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
