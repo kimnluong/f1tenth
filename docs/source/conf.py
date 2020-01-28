@@ -62,11 +62,11 @@ release = '0.3.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.doctest',
-    'sphinx.ext.coverage',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.viewcode',
+    # 'sphinx.ext.autodoc',
+    # 'sphinx.ext.doctest',
+    # 'sphinx.ext.coverage',
+    # 'sphinx.ext.mathjax',
+    # 'sphinx.ext.viewcode',
     # 'numpydoc',
 ]
 
@@ -156,10 +156,10 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    (master_doc, 'Flow.tex', 'Flow Documentation',
-     'flow-project', 'manual'),
-]
+# latex_documents = [
+#     (master_doc, 'Flow.tex', 'Flow Documentation',
+#      'flow-project', 'manual'),
+# ]
 
 
 # -- Options for manual page output ------------------------------------------
