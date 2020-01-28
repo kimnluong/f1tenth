@@ -15,29 +15,29 @@ import sys
 sys.path.insert(0, os.path.abspath('.'))
 """
 
-import sys
-try:
-    from unittest.mock import MagicMock
-except ImportError:
-    from mock import MagicMock
+# import sys
+# try:
+#     from unittest.mock import MagicMock
+# except ImportError:
+#     from mock import MagicMock
 
 
-class Mock(MagicMock):
-    """Mock object."""
+# class Mock(MagicMock):
+#     """Mock object."""
 
-    @classmethod
-    def __getattr__(cls, name):
-        """Return a MagicMock object."""
-        return MagicMock()
+#     @classmethod
+#     def __getattr__(cls, name):
+#         """Return a MagicMock object."""
+#         return MagicMock()
 
 
-MOCK_MODULES = [
-    "AAPI",
-    'PyANGKernel',
-    'AAPI.GKGUISystem',
-    'thread'
-]
-sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
+# MOCK_MODULES = [
+#     "AAPI",
+#     'PyANGKernel',
+#     'AAPI.GKGUISystem',
+#     'thread'
+# ]
+# sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 
 
 # -- Project information -----------------------------------------------------
