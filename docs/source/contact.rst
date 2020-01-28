@@ -1,7 +1,7 @@
 ..    include:: <isonum.txt>
-.. contents:: Learn
+.. contents:: Contact
 
-Learn
+Contact/Team
 ==================
 
 

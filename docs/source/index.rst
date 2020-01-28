@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Flow
+Welcome to F1tenth
 ================
 
 
@@ -23,6 +23,9 @@ Visit `our website <http://f1tenth.org/>`_ for more information.
    intro
    build
    learn
+   demo
+   press
+   contact
 ..   flow_setup
    flow_examples
    tutorials
