@@ -20,7 +20,7 @@ Visit `our website <http://f1tenth.org/>`_ for more information.
    :maxdepth: 1
    :caption: Contents:
    intro
-
+   manual
    learn
    demo
    press
