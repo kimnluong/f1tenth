@@ -19,21 +19,13 @@ Visit `our website <http://f1tenth.org/>`_ for more information.
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
-..   intro
-   build
+   intro
+
    learn
    demo
    press
    contact
-..   flow_setup
-   flow_examples
-   tutorials
-   multiagent
-   rendering
-   visualizing
-   regression
-   examples
-   modules
+
 
 
 .. Citing Flow
