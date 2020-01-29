@@ -19,6 +19,7 @@ Visit `our website <http://f1tenth.org/>`_ for more information.
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   
    intro
    manual
    learn
