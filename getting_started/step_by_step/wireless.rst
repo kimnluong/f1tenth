@@ -96,12 +96,16 @@ Here are sequential instructions to install x11vnc and set it up so it loads eve
 
 #​ Step 1 - Install X11VNC
 #​ ​#################################################################
-sudo apt-get install x11vnc -y
+.. code-block:: bash
+
+	$ sudo apt-get install x11vnc -y
 
 #​ Step 2 - Specify Password to be used ​for​ VNC Connection
 #​ ​#################################################################
 
-sudo x11vnc -storepasswd /etc/x11vnc.pass
+.. code-block:: bash
+
+	$ sudo x11vnc -storepasswd /etc/x11vnc.pass
 
 #​ Step 3 - Create the Service Unit File
 #​ ​#################################################################
@@ -123,12 +127,13 @@ EOF
 #​ Step 4 -Configure the Service
 #​ ​################################################################
 
-echo "Configure Services"
-sudo systemctl enable x11vnc.service
-sudo systemctl daemon-reload
+.. code-block:: bash
 
-sleep  5s
-sudo shutdown -r now
+	$ echo "Configure Services"
+	$ sudo systemctl enable x11vnc.service
+	$ sudo systemctl daemon-reload
+	$ sleep  5s
+	$ sudo shutdown -r now
 
 Note that if you want to change the port that the VNC server lives on, then simply change 5900 to some other number. The article states that if 5900 is used on the Jetson, then the VNC server will automatically forward through 5901. And if that is taken, then 5902, and so on and so forth.
 

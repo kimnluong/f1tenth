@@ -12,11 +12,12 @@ Install ROS
 ^^^^^^^^^^^^^^^^^^^^
 Go to ROS.org and follow the instructions there to install the version of ROS referenced above.
 
-
-
 Note: you might get the following error message when you execute
 
->> sudo apt-get install ros-kinetic-desktop-full
+.. code-block:: bash
+
+	$ sudo apt-get install ros-kinetic-desktop-full
+
 Building dependency tree
 Reading state information... Done
 Some packages could not be installed. This may mean that you have requested an impossible situation or if you are using the unstable distribution that some required packages have not yet been created or been moved out of Incoming.
@@ -30,11 +31,17 @@ You will find many suggestions online. This one worked for us (I'm installing on
 
 Specifically, these steps (but it's goot to try the steps in the suggested order):
 
-sudo apt-get -u dist-upgrade
-sudo apt-get -o Debug::pkgProblemResolver=yes dist-upgrade
+.. code-block:: bash
+
+	$ sudo apt-get -u dist-upgrade
+	$ sudo apt-get -o Debug::pkgProblemResolver=yes dist-upgrade
+
 Then re-run
 
->> sudo apt-get update
+.. code-block:: bash
+
+	$ sudo apt-get update
+
 and re-try installing ros-kinetic-desktop-full
 
 On Jetson
@@ -56,15 +63,20 @@ Connect the jetson to your host PC via the USB micro-B plug
 Plug to power
 The Jetson should power on. If it doesn’t, push the ON button.
 
-Login: nvidia
-Password: nvidia
+.. code-block:: bash
+
+	Login: nvidia
+	Password: nvidia
 
 
 Install Linux
 ---------------
 Run
 
-$ cat NVIDIA-INSTALLER/README.txt
+.. code-block:: bash
+
+	$ cat NVIDIA-INSTALLER/README.txt
+	
 And run the instructions that are in that file to install Ubuntu Linux. Note that TX1 comes with 14.04 LTS and TX2 comes with 16.04 LTS. There may be an additional step for TX1 if the course is using 16.04 LTS.
 
 Flash the Jetpack

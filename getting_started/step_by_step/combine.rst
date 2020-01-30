@@ -3,7 +3,7 @@
 Combine
 ========
 
-HOKUYO 10LX ETHERNET CONNECTION SETUP
+Hokuyo 10LX Ethernet Connection Setup
 -----------------------------------------
 Coming Soon: Add pictures and snippets.
 
@@ -17,7 +17,7 @@ When you plug in the 10LX make sure that the Hokuyo connection is selected. If e
 
 In the racecar config folder under ‘lidar_node’ set the following parameter: ‘ip_address: 192.168.0.10’. In addition in the sensors.launch.xml change the argument for the lidar launch from ‘hokuyo_node’ to ‘urg_node’ do the same thing for the node_type parameter.
 
-WORKING DIRECTORY SETUP
+Working Directory Setup
 --------------------------
 On your host computer (e.g., your laptop), setup your working directory (the F1/10th car and simulator) by following these steps.
 
@@ -63,7 +63,7 @@ Finally, source your working directory into your shell using
 
 Congratulations! Your working directory is all set up. Now if you examine the contents of your workspace, you will see 3 folders (In the ROS world we call them meta-packages since they contain packages): algorithms, simulator, and system. Algorithms contains the brains of the car which run high level algorithms, such as wall following, pure pursuit, localization. Simulator contains racecar-simulator which is based off of MIT Racecar’s repository and includes some new worlds such as Levine 2nd floor loop. Simulator also contains f1_10_sim which contains some message types useful for passing drive parameters data from the algorithm nodes to the VESC nodes that drive the car. Lastly, System contains code from MIT Racecar that the car would not be able to work without. For instance, System contains ackermann_msgs (for Ackermann steering), racecar (which contains parameters for max speed, sensor IP addresses, and teleoperation), serial (for USB serial communication with VESC), and vesc (written by MIT for VESC to work with the racecar).
 
-UDEV​ RULES SETUP
+Udev Rules Setup
 -------------------
 When you connect the VESC and LIDAR to the Jetson, the operating system will assign them device names of the form ​/dev/ttyACMx​, where x is a number that depends on the order in which they were plugged in. For example, if you plug in the LIDAR before you plug in the VESC, the LIDAR will be assigned the name /dev/ttyACM0​, and the VESC will be assigned /dev/ttyACM1​. This is a problem, as the car’s ROS configuration scripts need to know which device names the LIDAR and VESC are assigned, and these can vary every time we reboot the Jetson, depending on the order in which the devices are initialized.
 
@@ -106,7 +106,7 @@ If you want to add additional devices and don’t know their vendor or product I
 	$ sudo ​udevadm info --name=<your_device_name> --attribute-walk
 	making sure to replace ​<your_device_name>​ with the name of your device (e.g. ttyACM0 if that’s what the OS assigned it. The Unix utility ​dmesg​ can help you find that). The topmost entry will be the entry for your device; lower entries are for the device’s parents.
 
-MANUAL CONTROL
+Manual Control
 -----------------
 Before we can get the car to drive itself, it’s a good idea to test the car to make sure it can successfully drive on the ground under human control. Controlling the car manually is also a good idea if you’ve recently re-tuned the VESC or swapped out a drivetrain component, such as the motor or gears. Doing this step early can spare you a headache debugging your code later since you will be able to rule out lower-level hardware issues if your code doesn’t work.
 
@@ -134,7 +134,9 @@ If you’re getting “VESC out of sync errors”, check that the VESC is connec
 If you get “SerialException” types of messages, ​and you’re using the 30LX Hokuyo​, the errors might be due to a port conflict: e.g., suppose that the lidar was assigned the (virtual serial bi-directional) port ttyACM0 by the OS. And suppose that the vesc_node is told the VESC is connected to port ttyACM0 (as per vesc.yaml). Then when the vesc_node receives joystick commands from joy_node (via ROS), it pushes them to ACM0 - so these messages actually go to the lidar, and the VESC gets garbage back. So change the vesc.yaml port entry to ttyACM1. (This whole discussion remains valid if you switch 0 and 1, i.e. if the OS assigned ACM1 to the lidar and your vesc.yaml lists ACM1). Note that everytime you power down and up, the OS will assign ports from scratch, which might again break your config files. So a better solution is to use udev rules, as explained in this ​section​. (See joy_node.cpp for the default port for the joystick. You can over-ride that using a parameter in the launch file. See the joy documentation for what parameter that is).
 If you get urg_node related error messages, check the ports (e.g. an ip address in sensors.yaml can only be used by 10LX, not 30LX, and vice-versa for the /dev/ttyACM​n​).
 If you get razor_imu errors, delete the IMU entry from the launch file - we’re not using an IMU in this build.
-TUNING THE VESC PARAMETERS
+
+Tuning the VESC Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 You may want to fine tune your VESC parameters to match them to your car. Why? You might notice that your car with the default parameters drifts slightly to the side, or isn’t going as fast as you want it to. In order to tune your VESC parameters, navigate to racecar/racecar/config/racecar-v2/vesc.yaml. The vesc.yaml file is a configuration file where you can set parameters for erpm gain, steering angle offset, speed_min, speed_max, etc.
 
 If you want to modify the maximum speed, under vesc_driver you can change the speed_min and speed_max. These numbers represent the erpm of the car. By default they are set to +/- 3000 but you can set them higher, up to around 10,000. By default where speed_max is 3000 even though the joystick is telling the car to go 2 m/s (which corresponds to speed_to_erpm_gain * 2 = 9,228) your car will be limited by the 3000 erpm when 2 m/s actually corresponds to 9,228 erpm.
@@ -145,7 +147,7 @@ If you notice that your car is not going straight, then you will want to modify 
 
 Other than these three parameters above, I didn’t change anything else but you are welcome to play around with these as you see fit. It’s a great learning experience!
 
-TESTING THE LIDAR (USB ONLY)
+Testing the Lidar (USB Only)
 ---------------------------------
 Once you’ve set up the LIDAR, you can test it using ​urg_node​, ​rviz​, and ​rostopic​.
 
@@ -160,7 +162,7 @@ Try moving a flat object, such as a book, in front of the LIDAR and to its sides
 Try picking the car up and moving it around, and note how the LIDAR scan data changes,
 You can also see the LIDAR data in text form by using ​rostopic echo /scan​. The type of message published to it is sensor_msgs/Scan​, which you can also see by running ​rostopic info /scan​. There are many fields in this message type, but for our course, the most important one is ​ranges​, which is a list of distances the sensor records in order as it sweeps from its rightmost position to its leftmost position.
 
-RECORDING BAG DATA ON THE CAR
+Recording Bag Data on the Car
 --------------------------------
 ROSbags​ are useful for recording data from the car (e.g. LIDAR, wheel rotation) and playing it back later. This feature is useful because it allows you to capture data from when the car is running and later study the data or perform analysis on it to help you develop and implement better racing algorithms.
 
