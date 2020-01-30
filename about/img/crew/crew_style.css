@@ -1,0 +1,42 @@
+﻿.page-header {
+	margin-top:5vh;
+	text-transform:uppercase;
+	font-family:Montserrat;
+	text-align:center;
+	font-weight:600;
+	letter-spacing:2.5px;
+}
+
+.subtitle {
+	font-family:Montserrat;
+	text-align:center;
+	font-size:1.2em;
+}
+
+.text-center{
+	text-align:center;
+	padding:30px 0px;
+}
+
+.img-circle {
+    width: 60%;
+	height:auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+	padding-bottom:20px;
+}
+
+h3 {
+	font-family:Montserrat;
+}
+
+h4 {
+	font-family:Lora;
+	font-size:1.1em;
+}
+
+h5 {
+	font-family:Lora;
+	font-size:1em;
+}
