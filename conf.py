@@ -24,7 +24,7 @@ master_doc = 'index'
 
 # General information about the project
 project = 'F1tenth'
-copyright = '2014-2020, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0)'
+copyright = '2017-2020, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0)'
 author = 'Juan Linietsky, Ariel Manzur and the Godot community'
 
 # Version info for the project, acts as replacement for |version| and |release|

@@ -1,7 +1,7 @@
 .. _doc_hardware:
 
 
-Mechanical
+Building the Car
 ==================
 
 .. image:: img/f10cover.png
