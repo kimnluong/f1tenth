@@ -6,7 +6,7 @@ Bringing the Host and Jetson Together
 We could log into the Jetson using a monitor, keyboard, and mouse, but what about when we’re driving the car? Fortunately, the Jetson has Wi-Fi capability and can be accessed remotely via an SSH session. Throughout this tutorial, you will be asked to configure the Jetson’s and your laptop’s network settings. Make sure to get these right! Using the wrong IP address may lead to conflicts with another classmate, meaning neither of you will be able to connect.
 
 Connecting the Jetson/Car to the Access Point
--------------------------------------------
+----------------------------------------------
 
 #. Click the wireless icon at the top right of the screen and click the f110 network to start connecting to it. You will be prompted for a Wi-Fi password for the network: enter the password the TAs give you.
 
@@ -29,7 +29,7 @@ Connecting the Jetson/Car to the Access Point
 	* If you are connected to the router but can’t reach the internet, you may need to set up the Hokuyo to not allow routing through it.
 
 Connecting Your Host/Laptop to the Access Point
-----------------------------------------------
+-------------------------------------------------
 Important Note​: when connecting your laptop to the router, use an IP address of the form 192.168.2.xxx​, where ​xxx​ is your team’s number multiplied by 4, added to 100, and then added to a number between 0 and 3 according to the alphabetical order of your last name in your team. For example, if I am on team 2, my name is Jack Harkins, and my teammates are Chris Kao, Sheil Sarda, and Houssam Abbas, I would add 1 since my last name (Harkins) comes second, making my final IP address ​192.168.2.209​.
 
 Linux

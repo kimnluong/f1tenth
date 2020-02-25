@@ -11,4 +11,15 @@
     <link rel="alternate" hreflang="zh-cn" href="https://docs.godotengine.org/zh-cn/" />
     <link rel="alternate" hreflang="x-default" href="https://docs.godotengine.org/" />
     {{ super() }}
+
+
+  <script type="text/javascript">
+    <!-- Adds target=_blank to external links -->
+
+    $(document).ready(function () {
+      $('a[href^="http://"], a[href^="https://"]').not('a[class*=internal]').attr('target', '_blank');
+    });
+  </script>
+
 {% endblock %}
+

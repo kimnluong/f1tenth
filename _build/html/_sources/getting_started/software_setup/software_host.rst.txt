@@ -9,7 +9,7 @@ The f1tenth vehicle runs using ROS. This page walks you through how to set up th
 
 Installing Ubuntu
 ------------------
-If you do not already have Linux running natively on your laptop, we suggestion you dual boot or install Ubuntu on an external hard drive. Instructions for installing Ubuntu can be found `here <http://releases.ubuntu.com/xenial/>`_. 
+If you do not already have Linux running natively on your laptop, we suggestion you dual boot or install Ubuntu on an external hard drive. Instructions for installing Ubuntu can be found `here <http://releases.ubuntu.com/xenial/>`_. If you use a VM instead, see :ref:`Appendix B <doc_appendix_b>` on sharing folders.
 
 Installing ROS
 ------------------

@@ -24,8 +24,8 @@ master_doc = 'index'
 
 # General information about the project
 project = 'F1tenth'
-copyright = '2017-2020, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0)'
-author = 'Juan Linietsky, Ariel Manzur and the Godot community'
+copyright = '2018-2020, f1tenth community (CC-BY-NC-SA 4.0)'
+author = 'f1tenth community'
 
 # Version info for the project, acts as replacement for |version| and |release|
 # The short X.Y version
@@ -119,7 +119,7 @@ file_insertion_enabled = False
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   (master_doc, 'F1tenth.tex', 'F1tenth Documentation',
-   'Juan Linietsky, Ariel Manzur and the Godot community', 'manual'),
+   'f1tenth community', 'manual'),
 ]
 
 # -- Options for linkcheck builder ----------------------------------------
@@ -134,18 +134,6 @@ linkcheck_timeout = 10
 locale_dirs = ['../sphinx/po/']
 gettext_compact = False
 
-# Couldn't find a way to retrieve variables nor do advanced string
-# concat from reST, so had to hardcode this in the "epilog" added to
-# all pages. This is used in index.rst to display the Weblate badge.
-# On English pages, the badge points to the language-neutral engage page.
-rst_epilog = """
-.. |weblate_widget| image:: https://hosted.weblate.org/widgets/godot-engine/{image_locale}/godot-docs/287x66-white.png
-    :alt: Translation status
-    :target: https://hosted.weblate.org/engage/godot-engine{target_locale}/?utm_source=widget
-""".format(
-    image_locale='-' if language == 'en' else language,
-    target_locale='' if language == 'en' else '/' + language
-)
 
 # Exclude class reference when marked with tag i18n.
 if is_i18n:

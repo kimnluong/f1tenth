@@ -7,5 +7,3 @@ Appendices
 
    appendix_a
    appendix_b
-   appendix_c
-   appendix_d

@@ -19,6 +19,20 @@ Approximate Time Investment: 1 hour
 
 **KIM WILL REBUILD CAR AND UPDATE THESE SECTIONS**
 **KIM ADD VIDEO OF BUILD AND UPDATE CAR BUILD**
+
+.. warning:: 
+	**LIPO (LITHIUM POLYMER) BATTERY SAFETY WARNING**
+	
+	LiPO batteries allow your car to run for a long time, but they are not something to play with or joke about. They store a large amount of energy in a small space and can damage your car and cause a fire if used improperly. With this in mind, here are some safety tips for using them with the car.
+
+	* When charging batteries, always monitor them and place them in a fireproof bag on a non-flammable surface clear of any other objects.
+	* Do not leave a LIPO battery connected to the car when you’re not using it. The battery will discharge and its voltage will drop to a level too low to charge it safely again.
+	* Unplug the battery from the car immediately if you notice any popping sounds, bloating of the battery, burning smell, or smoke.
+	* Never short the battery leads.
+	* Do not plug the battery in backwards. This will damage the VESC and power board (and likely the Jetson as well) and could cause a short circuit.
+	* See ​this `video <https://www.youtube.com/watch?v=gz3hCqjk4yc>`_ for an example of what might happen if you don’t take care of your batteries. Be safe and don’t let these happen to you!
+
+
 Preparing and Assembling the Car
 ---------------------------------
 
@@ -200,67 +214,4 @@ At this point, your car should be assembled, the Jetson lights should flash when
 
 Note: At present, there's no way to know the battery's charge level except by measuring it with a multimeter as it runs. You might consider adding a low voltage LED or seven-segment LCD display (to show the voltage).
 
-Tuning the FOCbox’s PID Gains
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In this section we use the words FOCbox and VESC interchangeably.
 
-Important Safety Tips
-* Make sure you hold on to the car while testing the motor to prevent it from flying off the stand.
-* Make sure there are no objects (or people) in the vicinity of the wheels while testing.
-* It’s a good idea to use a fully-charged LiPO battery instead of a power supply to ensure the motor has enough current to spin up.
-
-#. Put your car on an elevated stand so that its wheels can turn without it going anywhere. If you don’t have an RC car stand, you can use the box that came with your Jetson.
-#. Connect the host laptop to the FOCbox using a USB cable.
-#. Download bldc tool from `JetsonHacks <https://github.com/jetsonhacks/installBLDC>`_, following his instructions for installation.
-#. Open BLDC Tool and click the “Connect” button at the top right of the window to connect to the VESC.
-
-* If you get the error “Device not found”, try running the command ​lsusb​ in a terminal. You should see an entry for “STMicroelectronics STMF407” or something similar. If you don’t, try unplugging and plugging in the USB cable on both ends. If the problem doesn’t go away, try rebooting the Jetson.
-
-.. image:: img/tuning1.jpg
-
-* If you are using a VESC 4.12 (including a FOCbox), ensure the firmware version is 2.18.
-
-.. image:: img/tuning2.jpg
-
-#. Disable keyboard control by clicking the “KB Ctrl” button at the lower right. This will prevent your keyboard’s arrow keys from controlling the motor and is important to prevent damage to the car from it moving unexpectedly.
-
-.. image:: img/tuning3.jpg
-
-#. Start plotting the realtime RPM data by clicking the “Realtime Data” tab, and checking the “Activate sampling” checkbox at the bottom left of the window. Click the “RPM” tab above the graph.
-* We will keep referring to this plot of the motor’s RPM as we tune the PID gains. Out goal is to get the motor to spin up as quickly as possible when we set it to a certain RPM. We also don’t want the motor to cog (not spin) or overshoot the target speed if possible.
-
-.. image:: img/tuning4.jpg
-
-#. Test the motor first (without PID speed control) by setting the “Duty Cycle” to 0.20. This will spin the motor up to approximately 16,000 - 17,000 RPM. Let this run for a few seconds, and then press the “Release Motor” button at the bottom right to stop it.
-	* Observe the RPM graph. If the motor is spinning backwards (the RPM is negative), try reversing two of the connections from the VESC to the motor. (It doesn’t matter which wires you reverse.)
-	* If the wheels don’t spin and the motor makes no noise, check to make sure all connections to the motor are tight.
-	* If the wheels don’t spin and the motor does, ensure the motor’s gear is attached correctly to the gearbox at the back of the car. Spin both front wheels with your hand to verify that the gear is making good contact. You should feel some resistance when turning the wheels.
-	* If the motor doesn’t spin and makes a humming or hissing sound, you might need to replace the motor. If this doesn’t work, try replacing the VESC.
-
-.. image:: img/tuning5.jpg
-
-#. Click the “Motor Configuration” tab at the top and the “Advanced” tab on the left. Set Ki and Kd to 0.00000, and set Kp to 0.00001. Click the “Write Configuration” button at the bottom, go back to the data plotting tab and run the car at 3000 RPM.
-	* You will notice that the car won’t even make it close, as it only goes up to around 1200 RPM. (High steady-state error.)
-	* Try turning Kp up to 0.00002, 0.00004, and 0.00008. (Don’t forget to write the configuration each time.) The motor will start to cog out at higher Kp values.
-	
-.. image:: img/tuning6.jpg
-
-#. Set Kp back to 0.00002, and set Ki to 0.00002, and run the car at 3000 RPM again. Notice how the car slowly reaches the 3000 RPM target. (This is because adding Ki helps to eliminate steady-state error.)
-Keep increasing Ki; set it to 0.00005 and then double that value a few times until the car is able to reach 3000 RPM without overshooting or cogging out.
-#. Now, try increasing the speed to 6000 RPM.
-The motor might cog out and overshoot. If it does, try halving Kp.
-#. Increase the speed to 10,000 RPM and then 20,000 RPM. ​Make sure you hold the car!
-If the motor cogs out and overshoots, halve Kp until it doesn’t.
-It may also help to halve Ki if halving Kp doesn’t work.
-If done correctly, the motor should not overshoot to more than 2 times the set RPM. (That is, if the RPM is set to 15,000, its peak value should not exceed 30,000.)
-
-LiPo (Lithium Polymer) Battery Safety
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-LiPO batteries allow your car to run for a long time, but they are not something to play with or joke about. They store a large amount of energy in a small space and can damage your car and cause a fire if used improperly. With this in mind, here are some safety tips for using them with the car.
-
-* When charging batteries, always monitor them and place them in a fireproof bag on a non-flammable surface clear of any other objects.
-* Do not leave a LIPO battery connected to the car when you’re not using it. The battery will discharge and its voltage will drop to a level too low to charge it safely again.
-* Unplug the battery from the car immediately if you notice any popping sounds, bloating of the battery, burning smell, or smoke.
-* Never short the battery leads.
-* Do not plug the battery in backwards. This will damage the VESC and power board (and likely the Jetson as well) and could cause a short circuit.
-* See ​this `video <https://www.youtube.com/watch?v=gz3hCqjk4yc>`_ for an example of what might happen if you don’t take care of your batteries. Be safe and don’t let these happen to you!

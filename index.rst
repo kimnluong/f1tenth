@@ -1,21 +1,16 @@
 f1tenth - build documentation
 ================================================
 
-..
-  .. only:: not i18n
+Welcome to the official build documentation of `F1tenth <http://f1tenth.org/>`_. 
 
-    .. note:: Godot's documentation is available in various languages and versions.
-              Expand the "Read the Docs" panel at the bottom of the sidebar to see
-              the list.
+If you want to learn how to make the vehicle, :ref:`Getting Started <doc_build_intro>` walks through how to build the car from ground up. It will also explain how to install all of the required firmware and software.
 
-    .. attention:: This is the documentation for the development (master) branch.
-                   Looking for the documentation of the current **stable** branch?
-                   `Have a look here <https://docs.godotengine.org/en/stable>`_.
+If you already have a working car and the work environment set up, then check out :ref:`Going Forward <doc_going_forward_intro>` to learn how to install the simulator and implement some fun algorithms.
 
+Join in the discussion with us on Slack! There, you can ask build questions, bring up software concerns, look for competition updates, and much more.
 
-Welcome to the official build documentation of `F1tenth <http://f1tenth.org/>`_. If you are new to this documentation,
-we recommend that you read the :ref:`introduction page <doc_intro>` to
-get an overview of what this documentation has to offer.
+.. image:: img/add-to-slack.png
+   :target: https://join.slack.com/t/f1tenth-teams/shared_invite/enQtMzc3ODU2ODM1NzE3LTBjMmVkMzZjZTJiNWUzZDFhZTJiODgzMjg0MTA1MDAxZTUxMzkwMDRhNTM2NzdjNDc5MTk5YTc5YmNhNTdhMTU
 
 The table of contents below and in the sidebar should let you easily access the
 documentation for your topic of interest. You can also use the search function
@@ -29,8 +24,7 @@ in the top left corner.
           by letting us know!
 
           Submit an issue or pull request on the `GitHub repository
-          <https://github.com/kimnluong/f1tenth_doc>`_,
-          and join us on slack!
+          <https://github.com/kimnluong/f1tenth_doc>`_.
 
 The main documentation for the site is organized into the following sections:
 
@@ -51,7 +45,9 @@ The main documentation for the site is organized into the following sections:
    getting_started/intro 
    getting_started/build_car
    getting_started/software_setup/index
+   getting_started/firmware
    getting_started/appendix/index
+   getting_started/faq
 .. getting_started/bom
 
 .. toctree::
@@ -60,28 +56,31 @@ The main documentation for the site is organized into the following sections:
    :name: sec-forward
 
    going_forward/intro
-   going_forward/algorithms
    going_forward/simulation
+   going_forward/algorithms
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Learn
-   :name: sec-learn
 
-   learn/index
+.. 
+	.. toctree::
+..    :maxdepth: 1
+..    :caption: Learn
+..    :name: sec-learn
+
+..    learn/index
   
 
+.. 
+	.. toctree::
+..    :maxdepth: 1
+..    :caption: Press
+..    :name: sec-press
+
+..    press/index
+
+
 .. toctree::
    :maxdepth: 1
-   :caption: Press
-   :name: sec-press
-
-   press/index
-
-
-.. toctree::
-   :maxdepth: 1
-   :caption: contact
+   :caption: Support
    :name: sec-support-contact
 
    contact
